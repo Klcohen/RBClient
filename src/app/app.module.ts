@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SigninComponent } from './signin/signin.component';
+// import { SigninComponent } from './sign-in/sign-in.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { FeedCardComponent } from './feed-card/feed-card.component';
@@ -18,7 +18,7 @@ import { FeedComponent } from './feed/feed.component';
 @NgModule({
   declarations: [
     AppComponent,
-    SigninComponent,
+    // SigninComponent,
     NavbarComponent,
     SearchBarComponent,
     FeedCardComponent,
