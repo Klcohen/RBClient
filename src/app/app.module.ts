@@ -13,6 +13,7 @@ import { JournalComponent } from './journal/journal.component';
 import { ArtCreateComponent } from './art-create/art-create.component';
 import { PostButtonComponent } from './post-button/post-button.component';
 import { InspireButtonComponent } from './inspire-button/inspire-button.component';
+import { FeedComponent } from './feed/feed.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { InspireButtonComponent } from './inspire-button/inspire-button.componen
     JournalComponent,
     ArtCreateComponent,
     PostButtonComponent,
-    InspireButtonComponent
+    InspireButtonComponent,
+    FeedComponent
   ],
   imports: [
     BrowserModule,
