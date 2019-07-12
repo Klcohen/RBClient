@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-// import { SigninComponent } from './sign-in/sign-in.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { FeedCardComponent } from './feed-card/feed-card.component';
@@ -13,12 +12,12 @@ import { JournalComponent } from './journal/journal.component';
 import { ArtCreateComponent } from './art-create/art-create.component';
 import { PostButtonComponent } from './post-button/post-button.component';
 import { InspireButtonComponent } from './inspire-button/inspire-button.component';
+import { SignInComponent } from './sign-in/sign-in.component';
 import { FeedComponent } from './feed/feed.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    // SigninComponent,
     NavbarComponent,
     SearchBarComponent,
     FeedCardComponent,
@@ -28,7 +27,8 @@ import { FeedComponent } from './feed/feed.component';
     ArtCreateComponent,
     PostButtonComponent,
     InspireButtonComponent,
-    FeedComponent
+    FeedComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,
