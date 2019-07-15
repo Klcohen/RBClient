@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormGroup, FormControl } from '@angular/forms';
 import { HttpHeaders } from '@angular/common/http';
+import {UserService} from '../users/user.service'
 
 @Component({
   selector: 'app-sign-up',
@@ -17,23 +18,31 @@ export class SignUpComponent implements OnInit {
     bio: new FormControl('')
   });
 
-  constructor(private http: HttpClient) { }
+
+
+  constructor(private userService: UserService) { }
+  postUser(): void{
+    this.users = this.userService.addUser();
+  }
+
 onSubmit() {
+let user= JSON.stringify({user:{username: this.signUpForm.value.username, email: this.signUpForm.value.email, password: this.signUpForm.value.password, bio: this.signUpForm.value.bio}});
 
-  
-//HOW TO DO???
-let signUpUrl = `http://localhost:3001/user/signUp`;
+this.postUser(this.user);
 
-let httpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type':  'application/json',
-    'Authorization': 'my-auth-token'
-  })
-};
+// //HOW TO DO???
+// let signUpUrl = `http://localhost:3001/user/signUp`;
 
-let body= JSON.stringify({user:{username: this.signUpForm.value.username, email: this.signUpForm.value.email, password: this.signUpForm.value.password, bio: this.signUpForm.value.bio}});
-console.log(body)
-this.http.post(signUpUrl, body ,httpOptions)
+// let httpOptions = {
+//   headers: new HttpHeaders({
+//     'Content-Type':  'application/json',
+//     'Authorization': 'my-auth-token'
+//   })
+// };
+
+// let body= JSON.stringify({user:{username: this.signUpForm.value.username, email: this.signUpForm.value.email, password: this.signUpForm.value.password, bio: this.signUpForm.value.bio}});
+// console.log(body)
+// this.http.post(signUpUrl, body ,httpOptions)
 
   
 }

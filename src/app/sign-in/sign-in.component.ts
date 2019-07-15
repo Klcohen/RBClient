@@ -26,18 +26,18 @@ onSubmit() {
   
 //HOW TO DO???
 
-let signInUrl = `http://localhost:3001/user/signin`;
+// let signInUrl = `http://localhost:3001/user/signin`;
 
-let httpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type':  'application/json',
-    'Authorization': 'my-auth-token'
-  })
-};
+// let httpOptions = {
+//   headers: new HttpHeaders({
+//     'Content-Type':  'application/json',
+//     'Authorization': 'my-auth-token'
+//   })
+// };
 
-let body= JSON.stringify({user:{email: this.signInForm.value.email, password: this.signInForm.value.password}});
+// let body= JSON.stringify({user:{email: this.signInForm.value.email, password: this.signInForm.value.password}});
 
-return this.http.post(signInUrl, body ,httpOptions)
+// return this.http.post(signInUrl, body ,httpOptions)
 
 
 }
