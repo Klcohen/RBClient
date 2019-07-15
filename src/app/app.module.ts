@@ -14,6 +14,7 @@ import { ArtCreateComponent } from './art-create/art-create.component';
 import { PostButtonComponent } from './post-button/post-button.component';
 import { InspireButtonComponent } from './inspire-button/inspire-button.component';
 import { FeedComponent } from './feed/feed.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { FeedComponent } from './feed/feed.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
