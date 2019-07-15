@@ -9,6 +9,13 @@ export class ArtCreateComponent implements OnInit {
 
   constructor() { }
 
+  // onSubmit() {
+
+  //   console.warn(this.sizePicker.value);
+  //   return this.sizePicker.value;
+    
+  // }
+
   ngOnInit() {
   }
 
