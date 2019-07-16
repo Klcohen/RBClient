@@ -1,8 +1,13 @@
 export class User {
-    id: number;
+  user:{
     username: string;
     email: string;
     password: string;
     bio: string;
-    isSecret = false;
   }
+  };
+export class UserLogin{
+  user:{
+  email: string;
+  password: string;
+}}

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormGroup, FormControl } from '@angular/forms';
 import { HttpHeaders } from '@angular/common/http';
+import { UserService } from '../users/user.service'
 
 
 @Component({
@@ -20,24 +21,13 @@ export class SignInComponent implements OnInit {
   
 
 
-  constructor(private http: HttpClient) { }
+  constructor(private userService: UserService) { }
 onSubmit() {
 
-  
-//HOW TO DO???
+  let userlog = {user: { email: this.signInForm.value.email, password: this.signInForm.value.password} };
 
-let signInUrl = `http://localhost:3001/user/signin`;
+  this.userService.loginUser(userlog).subscribe(data => console.log(data))
 
-let httpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type':  'application/json',
-    'Authorization': 'my-auth-token'
-  })
-};
-
-let body= JSON.stringify({user:{email: this.signInForm.value.email, password: this.signInForm.value.password}});
-
-return this.http.post(signInUrl, body ,httpOptions)
 
 
 }
