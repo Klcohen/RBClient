@@ -14,6 +14,7 @@ import { ArtCreateComponent } from './art-create/art-create.component';
 import { PostButtonComponent } from './post-button/post-button.component';
 import { InspireButtonComponent } from './inspire-button/inspire-button.component';
 import { FeedComponent } from './feed/feed.component';
+import { CommentService } from './services/comment.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { FeedComponent } from './feed/feed.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [CommentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

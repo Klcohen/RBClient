@@ -1,8 +1,19 @@
 * {
     box-sizing: border-box;
   }
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
   
-  .warning {
+  .example-full-width {
+    width: 100%;
+  }
+  .list-group li {
+    color: red;
+    }
+  /* .warning {
     background-color: orange;
     color: #fff;
     padding: 2em;
@@ -88,7 +99,7 @@
       list-style: none;
       padding: 0;
       margin-top: 65px;
-      
+    }  
       .comment-remove {
         display: none;
                 background-color: red;
@@ -99,10 +110,10 @@
         padding: 0 12px;
         opacity: .75;
         cursor: pointer;
+      }
         &:hover {
           opacity: 1;
         }
-      }
       
       li {
         font-size: 28px;
@@ -113,6 +124,5 @@
           display: inline-block;
         }
       }
-    }
+    } */
     
-  }
