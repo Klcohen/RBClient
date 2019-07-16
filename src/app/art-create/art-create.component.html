@@ -1,33 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Pixel!</title>
+<h1>Create your art!</h1>
+<h2>Choose Grid Size</h2>
 
-</head>
-<body>
-    <h1>Create your art!</h1>
-    <h2>Choose Grid Size</h2>
-   
-   
-    <form [formGroup]="sizePicker" (ngSubmit)="onSubmit()">
-      Grid Height:
-      <input type="number" formControlName="height" min="1" value="1"><br>
-      Grid Width:
-      <input type="number" formControlName="width" min="1" value="1"><br>
-      <button type="submit">Submit</button> 
-    </form>
-    
 
-    <h2>Pick A Color</h2>
-    <input type="color" id="colorPicker">
-    <h2>Design Canvas</h2>
+<form [formGroup]="sizePicker" (ngSubmit)="onSubmit()">
+  Grid Height:
+  <input type="number" formControlName="height" min="1" value="1"><br>
+  Grid Width:
+  <input type="number" formControlName="width" min="1" value="1"><br>
+  <button type="submit">Submit</button>
+</form>
 
-    <table id="pixel_canvas"></table>
 
-  
-    <script src="art-create.component.ts"></script>
-</body>
-</html>
+<h2>Pick A Color</h2>
+<input type="color" id="colorPicker">
+<h2>Design Canvas</h2>
+
+<table id="pixel_canvas">
+  <ng-container *ngFor="let row of canvas; let i = index">
+   <tr><ng-container *ngFor="let column of row; let j = index">
+      <td>{{column}}</td>
+    </ng-container></tr>
+  </ng-container>
+
+</table>
+
+
+<script src="art-create.component.ts"></script>
