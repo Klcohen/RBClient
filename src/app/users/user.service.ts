@@ -1,25 +1,22 @@
 import { User } from './user'
-import { HttpHeaders } from '@angular/common/http';
-
-import { Injectable } from '@angular/core';
-import { Response, Headers } from '@angular/http';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
+import { UserLogin } from './user'
 import { catchError, retry } from 'rxjs/operators';
+import { Injectable} from '@angular/core';
+import { HttpParams, HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { SignUpComponent } from "../sign-up/sign-up.component"
 //Grab everything with import 'rxjs/Rx';
-import { Observable } from 'rxjs/Observable';
-import { Observer } from 'rxjs/Observer';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
 
 
 
 let httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json',
-    'Authorization': 'my-auth-token'
   })
 };
+
+
 
 @Injectable({
   providedIn: 'root'
@@ -30,20 +27,45 @@ export class UserService {
 
  // HOW TO DO???
 signUpUrl = `http://localhost:3001/user/signUp`;
-signInUrl = `http://localhost:3001/user/signIn`;
+signInUrl = `http://localhost:3001/user/login`;
+userUrl= `http://localhost:3001/user/`;
 
 addUser(user: User): Observable<User> {
   return this.http.post<User>(this.signUpUrl, user ,httpOptions)
-  .pipe(
-    catchError(this.handleError('addUser', user))
-    );
+  // .pipe(
+  //   catchError(this.handleError( user ))
+  //   );
+};
+
+loginUser(userlog: UserLogin): Observable<UserLogin> {
+  return this.http.post<UserLogin>(this.signInUrl, userlog ,httpOptions)
+  // .pipe(
+  //   catchError(this.handleError( user ))
+  //   );
+};
+
+// getUser() {
+//   return this.http.get<User>(this.userUrl)
+//     .pipe(
+//       retry(3), // retry a failed request up to 3 times
+//       catchError(this.handleError) // then handle the error
+//     );
+// }
+
+private handleError(error: HttpErrorResponse) {
+  if (error.error instanceof ErrorEvent) {
+    // A client-side or network error occurred. Handle it accordingly.
+    console.error('An error occurred:', error.error.message);
+  } else {
+    // The backend returned an unsuccessful response code.
+    // The response body may contain clues as to what went wrong,
+    console.error(
+      `Backend returned code ${error.status}, ` +
+      `body was: ${error.error}`);
+  }
+  // return an observable with a user-facing error message
+  return throwError(
+    'Something bad happened; please try again later.');
 }
-
-
-// let body= JSON.stringify({user:{username: this.signUpForm.value.username, email: this.signUpForm.value.email, password: this.signUpForm.value.password, bio: this.signUpForm.value.bio}});
-// console.log(body)
-
-
-  
 
 }
