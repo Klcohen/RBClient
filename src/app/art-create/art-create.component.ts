@@ -14,7 +14,13 @@ export class ArtCreateComponent implements OnInit {
     height: new FormControl(''),
     width: new FormControl(''),
   });
+
+  colorPicker = new FormGroup({
+    color: new FormControl('')
+  })
+
   canvas: any[];
+  selectedColor: '';
 
   constructor() { }
 
@@ -29,7 +35,7 @@ export class ArtCreateComponent implements OnInit {
     //****************************************** 
     // USE ARRAY METHODS TO CLEAN UP AND SHORTEN
     // *****************************************
-    let canvas = [] 
+    let canvas = []
     for (let row = 0; row < gridHeight; row++) {
       for (let column = 0; column < gridWidth; column++) {
         if (canvas[row]) {
@@ -39,16 +45,18 @@ export class ArtCreateComponent implements OnInit {
         }
       }
     }
-
     console.log(canvas)
     this.canvas = canvas
-
-
-
   }
 
+  pickColor() {
+    console.warn('Color Function Running')
+  }
+
+
+
   ngOnInit() {
-    
+
   }
 
 }
