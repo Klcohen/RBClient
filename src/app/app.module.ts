@@ -16,6 +16,7 @@ import { PostButtonComponent } from './post-button/post-button.component';
 import { InspireButtonComponent } from './inspire-button/inspire-button.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { FeedComponent } from './feed/feed.component';
+import { CommentService } from './services/comment.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -55,7 +56,7 @@ import { FormsModule }   from '@angular/forms';
     ReactiveFormsModule,
 
   ],
-  providers: [],
+  providers: [CommentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
