@@ -5,6 +5,7 @@ import { RouterLinkWithHref } from '@angular/router';
 import { NgForOf } from '@angular/common';
 import { style } from '@angular/animations';
 import { Target } from '@angular/compiler';
+import { TargetLocator } from 'selenium-webdriver';
 
 @Component({
   selector: 'app-art-create',
@@ -55,10 +56,12 @@ export class ArtCreateComponent implements OnInit {
   }
 
  onClick(event){
-  //  console.log(event)
+   console.log(event)
   //  console.log('Click is working')
    console.log(event.target.id)
-    console.log(this.selectedColor)
+  console.log(this.selectedColor);
+  event.target.backgroundColor = this.selectedColor
+
     }
 
 
