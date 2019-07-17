@@ -10,12 +10,18 @@ import { SignUpComponent } from "../sign-up/sign-up.component"
 
 
 
-let httpOptions = {
+let httpOptionsOne = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json',
   })
 };
 
+let httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type':  'application/json',
+    'Authorization': 'my-auth-token'
+  })
+};
 
 
 @Injectable({
@@ -31,26 +37,16 @@ signInUrl = `http://localhost:3001/user/login`;
 userUrl= `http://localhost:3001/user/`;
 
 addUser(user: User): Observable<User> {
-  return this.http.post<User>(this.signUpUrl, user ,httpOptions)
-  // .pipe(
-  //   catchError(this.handleError( user ))
-  //   );
+  return this.http.post<User>(this.signUpUrl, user ,httpOptionsOne)
 };
 
 loginUser(userlog: UserLogin): Observable<UserLogin> {
-  return this.http.post<UserLogin>(this.signInUrl, userlog ,httpOptions)
-  // .pipe(
-  //   catchError(this.handleError( user ))
-  //   );
+  return this.http.post<UserLogin>(this.signInUrl, userlog ,httpOptionsOne)
 };
 
-// getUser() {
-//   return this.http.get<User>(this.userUrl)
-//     .pipe(
-//       retry(3), // retry a failed request up to 3 times
-//       catchError(this.handleError) // then handle the error
-//     );
-// }
+getUser() {
+  return this.http.get<User>(this.userUrl)
+}
 
 private handleError(error: HttpErrorResponse) {
   if (error.error instanceof ErrorEvent) {

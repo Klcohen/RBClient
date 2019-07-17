@@ -1,17 +1,18 @@
 <mat-card>
     <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
-        <label>
+            <mat-card-title>login</mat-card-title>
+        <mat-form-field>
             <input formControlName="username" matInput placeholder="Username">
-        </label>
-        <label>
+        </mat-form-field>
+        <mat-form-field>
             <input formControlName="email" placeholder="Email" type="email">
-        </label>
-        <label>
+        </mat-form-field>
+        <mat-form-field>
             <input formControlName="password" matInput placeholder="Password" type="password">
-        </label>
-        <label>
+        </mat-form-field>
+        <mat-form-field>
             <textarea formControlName="bio" matInput placeholder="Bio (optional)"></textarea>
-        </label>
+        </mat-form-field>
         <a style="padding:1em" routerLink="/Sign In">Cancel</a>
         <button mat-fab type="submit">Submit</button>
     </form>

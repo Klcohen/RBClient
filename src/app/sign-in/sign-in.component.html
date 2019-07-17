@@ -1,11 +1,15 @@
+
 <mat-card>
+
     <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
-        <label>
+        <mat-card-title>login</mat-card-title>
+        <mat-form-field>
             <input formControlName="email" matInput placeholder="Email" type="email">
-        </label>
-        <label>
+        </mat-form-field>
+
+        <mat-form-field>
             <input formControlName="password" matInput placeholder="Password" type="password">
-        </label>
+        </mat-form-field>
         <a style="padding:1em" routerLink="/Sign Up">New User?</a>
         <button mat-fab type="submit">Submit</button>
     </form>
