@@ -1,25 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from "rxjs";
 import { CommentService } from '../services/comment.service'
+//import { Comments } from '../services/comment'
 
 @Component({
   selector: 'app-comments',
   templateUrl: './comments.component.html',
-  styleUrls: ['./comments.component.css']
+  styleUrls: ['./comments.component.css'],
+  providers: [ CommentService ]
 })
 export class CommentsComponent {
   title = "Comments";  
   comments;
 
   constructor(service: CommentService) {
-    this.comments = service.getComments();
+     //this.comments = service.addComment();
   }
-}   
-    // ngOnInit(){
-    // }
-  
-    // }
-      
+  ngOnInit(){
+  }
+
+}
+       
 
   //   let observable = Observable.create((observer:any) => {
   //     try {
@@ -131,5 +132,3 @@ export class CommentsComponent {
         
   //     }, true);
   //   }
-  // }
-    
