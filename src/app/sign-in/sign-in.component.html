@@ -3,13 +3,13 @@
 
     <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
         <mat-card-title>login</mat-card-title>
-        <mat-form-field>
+        <label>
             <input formControlName="email" matInput placeholder="Email" type="email">
-        </mat-form-field>
+        </label>
 
-        <mat-form-field>
+        <label>
             <input formControlName="password" matInput placeholder="Password" type="password">
-        </mat-form-field>
+        </label>
         <a style="padding:1em" routerLink="/Sign Up">New User?</a>
         <button mat-fab type="submit">Submit</button>
     </form>

@@ -28,7 +28,11 @@ onSubmit() {
   let userlog = {user: { email: this.signInForm.value.email, password: this.signInForm.value.password} };
 
   this.userService.loginUser(userlog)
-  .subscribe(data => console.log(data))
+  .subscribe(data => {
+    console.log(data.session)
+    localStorage.setItem('token', data.sessionToken)
+  },
+  err => console.log(err))
 
 
 
