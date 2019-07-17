@@ -4,11 +4,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { ArtCreateComponent } from './art-create/art-create.component'
 import { FeedComponent } from './feed/feed.component'
 import { ProfileComponent } from './profile/profile.component'
+import { SignInComponent } from './sign-in/sign-in.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 const routes: Routes = [
   { path: 'home', component: ArtCreateComponent},
   { path: 'feed', component: FeedComponent},
-  {path: 'profile', component: ProfileComponent}
+  {path: 'profile', component: ProfileComponent},
+  {path: 'Sign In', component: SignInComponent},
+  {path: 'Sign Up', component: SignUpComponent}
 ];
 
 @NgModule({

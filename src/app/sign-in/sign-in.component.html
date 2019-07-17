@@ -1,1 +1,12 @@
-<p>sign-in works!</p>
+<mat-card>
+    <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+        <label>
+            <input formControlName="email" matInput placeholder="Email" type="email">
+        </label>
+        <label>
+            <input formControlName="password" matInput placeholder="Password" type="password">
+        </label>
+        <a style="padding:1em" routerLink="/Sign Up">New User?</a>
+        <button mat-fab type="submit">Submit</button>
+    </form>
+</mat-card>
