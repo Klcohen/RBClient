@@ -24,6 +24,10 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { FormsModule }   from '@angular/forms';
+import { AuthGuardService } from './auth/auth-guard.service';
+import { AuthService } from './auth/auth.service';
+import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
+
 
 
 
@@ -56,7 +60,8 @@ import { FormsModule }   from '@angular/forms';
     ReactiveFormsModule,
 
   ],
-  providers: [CommentService],
-  bootstrap: [AppComponent]
+  providers: [CommentService, AuthGuardService, AuthService, JwtHelperService,{provide:JWT_OPTIONS,useValue:JWT_OPTIONS}],
+  bootstrap: [AppComponent],
+
 })
 export class AppModule { }

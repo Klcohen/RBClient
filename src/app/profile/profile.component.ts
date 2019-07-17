@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth/auth.service'
 
 @Component({
   selector: 'app-profile',
@@ -11,5 +12,9 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  logout(){
+    localStorage.setItem('token', "")
+    alert("you've been logged out!")
+    console.log("session token cleared")
+  }
 }
