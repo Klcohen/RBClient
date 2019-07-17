@@ -4,6 +4,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { RouterLinkWithHref } from '@angular/router';
 import { NgForOf } from '@angular/common';
 import { style } from '@angular/animations';
+import { Target } from '@angular/compiler';
 
 @Component({
   selector: 'app-art-create',
@@ -22,17 +23,18 @@ export class ArtCreateComponent implements OnInit {
 
   canvas: any[];
   selectedColor: '';
-  // startColor: 'black'
+  public startColor: 'black'
+
 
   constructor() { }
 
-  onSubmit() {
+  onSubmit(event) {
 
     console.warn(this.sizePicker.value);
 
     let gridHeight = this.sizePicker.value.height;
     let gridWidth = this.sizePicker.value.width;
-
+    
     //****************************************** 
     // USE ARRAY METHODS TO CLEAN UP AND SHORTEN
     // *****************************************
@@ -48,13 +50,15 @@ export class ArtCreateComponent implements OnInit {
       }
     }
     console.log(canvas)
+    console.log(event)
     this.canvas = canvas
   }
 
  onClick(event){
-   console.log(event)
-   console.log('Click is working')
-  //  string interpolation with variable give each one unique id to change specific background color
+  //  console.log(event)
+  //  console.log('Click is working')
+   console.log(event.target.id)
+    console.log(this.selectedColor)
     }
 
 

@@ -2,7 +2,7 @@
 <h3>Choose Grid Size</h3>
 
 
-<form [formGroup]="sizePicker" (ngSubmit)="onSubmit()">
+<form [formGroup]="sizePicker" (ngSubmit)="onSubmit($event)">
   Grid Height:    
   <input type="number" formControlName="height" max="20" min="1" value="1">
   Grid Width:     
@@ -14,7 +14,7 @@
 <h3>Color Picker</h3>
 
 <!-- <form [formGroup]="colorPicker" > -->
-<input [(ngModel)]="selectedColor" type="color" id="colorPicker" (ng-click)="pickColor()">
+<input [(ngModel)]="selectedColor" type="color" id="colorPicker">
 <!-- </form> -->
 
 <br/>
@@ -23,7 +23,7 @@
 <table id="pixel_canvas">
   <ng-container *ngFor="let row of canvas; let i = index">
    <tr><ng-container  *ngFor="let column of row; let j = index">
-      <td (click)="onClick($event)" [ngClass]="['cell']" [ngStyle]="{'background-color' : selectedColor}">{{column}}</td>
+      <td (click)="onClick($event)" [ngClass]="['cell']" id={{i}},{{j}} [ngStyle]="{'background-color' : 'whitesmoke'}">{{column}}</td>
     </ng-container></tr>
   </ng-container>
 
