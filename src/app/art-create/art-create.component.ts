@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { FormGroup, FormControl } from '@angular/forms';
 import { RouterLinkWithHref } from '@angular/router';
 import { NgForOf } from '@angular/common';
+import { style } from '@angular/animations';
 
 @Component({
   selector: 'app-art-create',
@@ -15,19 +16,19 @@ export class ArtCreateComponent implements OnInit {
     width: new FormControl(''),
   });
 
-  colorPicker = new FormGroup({
-    color: new FormControl('')
-  })
+  // colorPicker = new FormGroup({
+  //   color: new FormControl('')
+  // })
 
   canvas: any[];
   selectedColor: '';
+  // startColor: 'black'
 
   constructor() { }
 
   onSubmit() {
 
     console.warn(this.sizePicker.value);
-
 
     let gridHeight = this.sizePicker.value.height;
     let gridWidth = this.sizePicker.value.width;
@@ -38,6 +39,7 @@ export class ArtCreateComponent implements OnInit {
     let canvas = []
     for (let row = 0; row < gridHeight; row++) {
       for (let column = 0; column < gridWidth; column++) {
+        
         if (canvas[row]) {
           canvas[row][column] = undefined
         } else {
@@ -49,10 +51,11 @@ export class ArtCreateComponent implements OnInit {
     this.canvas = canvas
   }
 
-  pickColor() {
-    console.warn('Color Function Running')
-  }
-
+ onClick(event){
+   console.log(event)
+   console.log('Click is working')
+  //  string interpolation with variable give each one unique id to change specific background color
+    }
 
 
   ngOnInit() {
