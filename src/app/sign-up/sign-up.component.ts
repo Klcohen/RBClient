@@ -30,7 +30,8 @@ export class SignUpComponent implements OnInit {
 
     this.userService.addUser(user).subscribe(data => {
 
-    localStorage.setItem('token', data.sessionToken)
+    localStorage.setItem('token', data.sessionToken),
+    alert("logged in!")
   },
   err => console.log(err))
 

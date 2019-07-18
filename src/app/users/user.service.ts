@@ -19,7 +19,7 @@ let httpOptionsOne = {
 let httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json',
-    'Authorization': 'my-auth-token'
+    'Authorization': localStorage.getItem('token')
   })
 };
 
@@ -45,7 +45,11 @@ loginUser(userlog: UserLogin): Observable<UserLogin> {
 };
 
 getUser() {
-  return this.http.get<User>(this.userUrl)
+  return this.http.get<User>(this.userUrl, httpOptions)
+}
+
+editUser(){
+  return this.http.put<User>(this.userUrl, httpOptions)
 }
 
 // private handleError(error: HttpErrorResponse) {
