@@ -60,7 +60,7 @@ export class ArtCreateComponent implements OnInit {
   //  console.log('Click is working')
    console.log(event.target.id)
   console.log(this.selectedColor);
-  event.target.backgroundColor = this.selectedColor
+  event.target.style.backgroundColor = this.selectedColor
 
     }
 

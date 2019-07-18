@@ -23,7 +23,7 @@
 <table id="pixel_canvas">
   <ng-container *ngFor="let row of canvas; let i = index">
    <tr><ng-container  *ngFor="let column of row; let j = index">
-      <td (click)="onClick($event)" [ngClass]="['cell']" id={{i}},{{j}}>{{column}}</td>
+      <td (click)="onClick($event)" [ngClass]="['cell']" id={{i}},{{j}} [ngStyle]="{'background-color' : '#ffffff'}">{{column}}</td>
     </ng-container></tr>
   </ng-container>
 
