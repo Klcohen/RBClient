@@ -1,35 +1,49 @@
-<div style="text-align: center">
-<h3>Choose Grid Size</h3>
+<div id="wrapper">
 
 
-<form [formGroup]="sizePicker" (ngSubmit)="onSubmit($event)">
-  Grid Height:    
-  <input type="number" formControlName="height" max="20" min="1" value="1">
-  Grid Width:     
-  <input type="number" formControlName="width" max="20" min="1" value="1">
-  <button type="submit">Submit</button>
-</form>
+  <br />
+  <form [formGroup]="sizePicker" (ngSubmit)="onSubmit($event)">
+    Grid Height:
+    <input type="number" matInput placeholder="1 - 20" formControlName="height" max="20" min="1" value="1">
+    Grid Width:
+    <input type="number" matInput placeholder="1 - 20" formControlName="width" max="20" min="1" value="1">
+    <button type="submit" mat-raised-button>Submit</button>
+  </form>
 
 
-<h3>Color Picker</h3>
+  <h3>Color Picker</h3>
 
-<!-- <form [formGroup]="colorPicker" > -->
-<input [(ngModel)]="selectedColor" type="color" id="colorPicker">
-<!-- </form> -->
+  <input [(ngModel)]="selectedColor" type="color" id="colorPicker">
 
-<br/>
-<br/>
+  <br />
+  <br />
 
-<table id="pixel_canvas">
-  <ng-container *ngFor="let row of canvas; let i = index">
-   <tr><ng-container  *ngFor="let column of row; let j = index">
-      <td (click)="onClick($event)" [ngClass]="['cell']" id={{i}},{{j}} [ngStyle]="{'background-color' : '#ffffff'}">{{column}}</td>
-    </ng-container></tr>
-  </ng-container>
+  <table id="pixel_canvas">
+    <ng-container *ngFor="let row of canvas; let i = index">
+      <tr>
+        <ng-container *ngFor="let column of row; let j = index">
+          <td (click)="onClick($event)" [ngClass]="['cell']" id={{i}},{{j}}
+            [ngStyle]="{'background-color' : '#ffffff'}">{{column}}</td>
+        </ng-container>
+      </tr>
+    </ng-container>
+  </table>
+  <br />
+  <br />
 
-</table>
-<br/>
-<br/>
+  <button mat-raised-button (click)="inspire($event)">Inspire me!</button>
+  <h3>{{inspiration}}</h3>
+  <br />
+  <br />
+
+  <form [formGroup]="artSubmit">
+    <input type="text" matInput placeholder="Title">
+    <button type="submit" mat-raised-button>Post</button>
+  </form>
+
+
+
+
 </div>
 
 <script src="art-create.component.ts"></script>

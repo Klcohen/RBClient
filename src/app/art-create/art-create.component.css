@@ -1,3 +1,8 @@
+#wrapper {
+  text-align: center;
+  justify-content: center;
+}
+
 body {
   text-align: center;
 }
@@ -36,5 +41,13 @@ td {
 }
 
 input[type=number] {
-  width: 6em;
+  width: 8vh;
+  height: 2.5vh;
+  margin: 1em;
+}
+
+input[type=text] {
+  width: 12vh;
+  height: 2.5vh;
+  margin: 1em;
 }
