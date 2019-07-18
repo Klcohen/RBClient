@@ -10,7 +10,7 @@ import { Observable, throwError } from 'rxjs';
 let httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json',
-    'Authorization': 'my-auth-token'
+    'Authorization': localStorage.getItem('token')
   })
 };
 
