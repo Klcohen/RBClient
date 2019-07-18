@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth/auth.service'
+import { UserService} from '../users/user.service'
+import { getDefaultService } from 'selenium-webdriver/edge';
 
 @Component({
   selector: 'app-profile',
@@ -11,6 +13,7 @@ export class ProfileComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    // getUser()
   }
   logout(){
     localStorage.setItem('token', "")

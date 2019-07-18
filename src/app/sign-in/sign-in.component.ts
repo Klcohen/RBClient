@@ -29,7 +29,6 @@ onSubmit() {
 
   this.userService.loginUser(userlog)
   .subscribe(data => {
-    console.log(data.session)
     localStorage.setItem('token', data.sessionToken)
   },
   err => console.log(err))

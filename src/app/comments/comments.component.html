@@ -1,12 +1,5 @@
-<html>
-  <head>
-    <meta charset="UTF-8">  
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
-  </head>
-  <body ng-app>
-    <div class="container">
-      <h1 align="center"></h1>
+<!-- <div class="container">
+      <h1 content-align ="center"></h1>
       <hr/>
       <div class="form-group">
         <h2>Leave a Reply</h2>
@@ -38,6 +31,15 @@ function Controller($scope) {
          $scope.comments.splice($home, 1);
      }
  }
-</script>
-</body>
-</html>
+</script> -->
+
+<mat-card>
+  <form [formGroup]="commentForm" (ngSubmit)="onSubmit()">
+          <mat-card-title>leave a comment</mat-card-title>
+      <label>
+          <textarea formControlName="comment" matInput placeholder="comment"></textarea>
+      </label>
+      <br/>
+      <button type="submit">Post</button>
+  </form>
+</mat-card>
