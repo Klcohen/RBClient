@@ -1,6 +1,6 @@
 <div id="wrapper">
 
-
+  <!-- ******** GRID CREATE ******** -->
   <br />
   <form [formGroup]="sizePicker" (ngSubmit)="onSubmit($event)">
     Grid Height:
@@ -11,13 +11,14 @@
   </form>
 
 
+  <!-- ******** COLOR PICKER ******** -->
   <h3>Color Picker</h3>
-
   <input [(ngModel)]="selectedColor" type="color" id="colorPicker">
-
   <br />
   <br />
 
+
+  <!-- ******** CANVAS GRID ******** -->
   <table id="pixel_canvas">
     <ng-container *ngFor="let row of canvas; let i = index">
       <tr>
@@ -31,19 +32,21 @@
   <br />
   <br />
 
+
+  <!-- ******** INSPIRE BUTTON ******** -->
   <button mat-raised-button (click)="inspire($event)">Inspire me!</button>
   <h3>{{inspiration}}</h3>
   <br />
   <br />
 
-  <form [formGroup]="artSubmit">
-    <input type="text" matInput placeholder="Title">
+
+  <!-- ******** ART SUBMIT ******** -->
+  <form [formGroup]="artSubmit" (ngSubmit)="onPost($event)">
+    <input type="text" matInput formControlName="title" placeholder="Title">
     <button type="submit" mat-raised-button>Post</button>
   </form>
 
 
 
-
 </div>
-
 <script src="art-create.component.ts"></script>
