@@ -35,6 +35,7 @@ artDeleteUrl= `http://localhost:3001/art/:id`
 
 
 createArt(art: Art): Observable<Art> {
+  console.log(localStorage.getItem('token'))
   return this.http.post<Art>(this.artCreateUrl, art, httpOptions)
 };
 

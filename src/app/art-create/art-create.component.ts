@@ -89,11 +89,13 @@ export class ArtCreateComponent implements OnInit {
   // ART POST
   // *****************************************
   onPost(event) {
-    let artPost = { art: { title: this.artSubmit.value.title} }
+    let artPost = { art: { title: this.artSubmit.value.title } }
 
-    this.artService.createArt(artPost)
-    .subscribe()
-    console.log(event)
+    this.artService.createArt(artPost).subscribe(data => {
+      console.log(data)
+    })
+
+
 
   }
 
