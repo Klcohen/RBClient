@@ -1,6 +1,6 @@
 <mat-card>
     <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
-            <mat-card-title>login</mat-card-title>
+            <mat-card-title>Sign Up</mat-card-title>
         <label>
             <input formControlName="username" matInput placeholder="Username">
         </label>
@@ -15,5 +15,5 @@
         </label>
         <a style="padding:1em" routerLink="/Sign In">Cancel</a>
         <button mat-fab type="submit">Submit</button>
-    </form>
+        </form>
 </mat-card>
