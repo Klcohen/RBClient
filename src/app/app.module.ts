@@ -9,7 +9,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { FeedCardComponent } from './feed-card/feed-card.component';
 import { CommentsComponent } from './comments/comments.component';
-import { ProfileComponent } from './profile/profile.component';
+import { ProfileComponent, EditBioBox } from './profile/profile.component';
 import { JournalComponent } from './journal/journal.component';
 import { ArtCreateComponent } from './art-create/art-create.component';
 import { PostButtonComponent } from './post-button/post-button.component';
@@ -27,6 +27,7 @@ import { FormsModule }   from '@angular/forms';
 import { AuthGuardService } from './auth/auth-guard.service';
 import { AuthService } from './auth/auth.service';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
+import { MatDialogModule } from '@angular/material';
 
 
 
@@ -45,7 +46,8 @@ import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
     InspireButtonComponent,
     FeedComponent,
     SignInComponent,
-    SignUpComponent
+    SignUpComponent,
+    EditBioBox
   ],
   imports: [
     BrowserModule,
@@ -58,8 +60,11 @@ import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    MatDialogModule,
+
 
   ],
+  entryComponents:[EditBioBox],
   providers: [CommentService, AuthGuardService, AuthService, JwtHelperService,{provide:JWT_OPTIONS,useValue:JWT_OPTIONS}],
   bootstrap: [AppComponent],
 
