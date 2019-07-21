@@ -99,8 +99,6 @@ export class ArtCreateComponent implements OnInit {
       console.log(data)
     })
 
-
-
   }
 
   ngOnInit() {
