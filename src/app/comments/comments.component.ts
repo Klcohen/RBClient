@@ -26,9 +26,11 @@ export class CommentsComponent implements OnInit {
 
       console.log(data)
     },
-    err => console.log(err))
+    err => console.log(err)) 
   
     }
+
+  
   ngOnInit(){
   }
 
