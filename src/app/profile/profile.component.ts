@@ -50,6 +50,16 @@ export class ProfileComponent implements OnInit {
     localStorage.setItem('token', "")
     alert("you've been logged out!")
     console.log("session token cleared")
+    window.location.reload();
+  }
+
+  deleteUser(){
+
+    let ownerId = localStorage.getItem('id')
+
+    this.userService.deleteUser(ownerId).subscribe()
+    alert("your account has been deleted once you logout you'll have to make a new one")
+    window.location.reload();
   }
 }
 @Component({

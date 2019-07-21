@@ -50,8 +50,11 @@ getUser(OwnerId) {
 }
 
 editUser(bio: Bio, OwnerId): Observable<Bio> {
-  console.log(bio)
   return this.http.put<Bio>(`${this.userUrl}${OwnerId}`,bio, httpOptions)
+}
+
+deleteUser(OwnerId){
+  return this.http.delete(`${this.userUrl}${OwnerId}`, httpOptions)
 }
 
 // private handleError(error: HttpErrorResponse) {
