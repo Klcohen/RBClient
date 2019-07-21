@@ -1,6 +1,8 @@
 <h1>{{username}}'s Profile</h1>
 <h4>{{bio}}</h4>
-<button ng-click="open()" class="btn btn-primary">Edit Bio</button>
+
+
+<button (click)="openDialog()" class="btn btn-primary">Edit Bio</button>
 
 
 <button (click)="logout()">Logout</button>

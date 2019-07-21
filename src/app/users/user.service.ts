@@ -1,5 +1,6 @@
 import { User } from './user'
 import { UserLogin } from './user'
+import { Bio } from'./user'
 import { catchError, retry } from 'rxjs/operators';
 import { Injectable} from '@angular/core';
 import { HttpParams, HttpClient, HttpHeaders } from '@angular/common/http';
@@ -44,12 +45,13 @@ loginUser(userlog: UserLogin): Observable<UserLogin> {
   return this.http.post<UserLogin>(this.signInUrl, userlog ,httpOptionsOne)
 };
 
-getUser() {
-  return this.http.get<User>(this.userUrl, httpOptions)
+getUser(OwnerId) {
+  return this.http.get<User>(`${this.userUrl}${OwnerId}`, httpOptions)
 }
 
-editUser(){
-  return this.http.put<User>(this.userUrl, httpOptions)
+editUser(bio: Bio, OwnerId): Observable<Bio> {
+  console.log(bio)
+  return this.http.put<Bio>(`${this.userUrl}${OwnerId}`,bio, httpOptions)
 }
 
 // private handleError(error: HttpErrorResponse) {

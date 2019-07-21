@@ -12,5 +12,10 @@ export class UserLogin{
   email: string;
   password: string;
 }
-sessionToken?: string
+sessionToken?: string};
+
+export class Bio{
+  user:{
+    bio: string
+  }
 }
