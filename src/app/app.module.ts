@@ -9,7 +9,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { FeedCardComponent } from './feed-card/feed-card.component';
 import { CommentsComponent } from './comments/comments.component';
-import { ProfileComponent } from './profile/profile.component';
+import { ProfileComponent, EditBioBox } from './profile/profile.component';
 import { JournalComponent } from './journal/journal.component';
 import { ArtCreateComponent } from './art-create/art-create.component';
 import { PostButtonComponent } from './post-button/post-button.component';
@@ -24,6 +24,11 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { FormsModule }   from '@angular/forms';
+import { AuthGuardService } from './auth/auth-guard.service';
+import { AuthService } from './auth/auth.service';
+import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
+import { MatDialogModule } from '@angular/material';
+
 
 
 
@@ -41,7 +46,8 @@ import { FormsModule }   from '@angular/forms';
     InspireButtonComponent,
     FeedComponent,
     SignInComponent,
-    SignUpComponent
+    SignUpComponent,
+    EditBioBox
   ],
   imports: [
     BrowserModule,
@@ -54,9 +60,13 @@ import { FormsModule }   from '@angular/forms';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    MatDialogModule,
+
 
   ],
-  providers: [CommentService],
-  bootstrap: [AppComponent]
+  entryComponents:[EditBioBox],
+  providers: [CommentService, AuthGuardService, AuthService, JwtHelperService,{provide:JWT_OPTIONS,useValue:JWT_OPTIONS}],
+  bootstrap: [AppComponent],
+
 })
 export class AppModule { }

@@ -1,63 +1,9 @@
-<p>comments works!</p>
-
-<html>
-  <head>
-    <meta charset="UTF-8">  
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
-  </head>
-  <body ng-app>
-    <div class="container">
-      <h1 align="center"></h1>
-      <hr/>
-      <div class="form-group">
-        <h2>Leave a Reply</h2>
-        <form ng-controller="Controller">
-          <textarea class="form-control" rows="5" ng-model="cmtName" placeholder="Your Comment"></textarea>
-          <br/>
-          <button class="btn btn-success btn-md pull-right" ng-click='btn_post();'>Comment</button>
-          <br/>
-          <hr/>
-          <h3>Comments</h3>
-          <ul class="list-group">
-            <li class="list-group-item" ng-repeat="cmt in comments"> {{ cmt }}
-              <a href="" ng-click="post_cmt($home)"><span class="glyphicon glyphicon-trash" style="color:red; float:right;"></span></a>
-            </li>
-          </ul>
-        </form> 
-      </div>
-    </div>
-    <script type="text/javascript">
-function Controller($scope) {
-     $scope.comments = [];
-     $scope.btn_post = function() {
-         if ($scope.cmtName != '') {
-             $scope.comments.push($scope.cmtName);
-             $scope.cmtName = "";
-         }
-     }
-     $scope.post_cmt = function($home) {
-         $scope.comments.splice($home, 1);
-     }
- }
-</script>
-</body>
-</html>
-      <!-- <div class="warning" id="no_go"></div>
-      <div class="commentbox-app">
-        <div class="container">
-          <h1 class="heading">commentbox</h1>
-          <div class="clearfix">
-            <form id="comment-form">
-              <input type="text" id="comment-input" class="comment-input" placeholder="Thoughts">
-              <input type="submit" value="Post" class="comment-btn">
-            </form>
-          </div>
-          
-          <ul id="comment-stream" class="comment-stream">
-      dummy data:       <li>Hey! <span class="comment-remove">&times;</span></li>
-            <li>Just a thought <span href="" class="comment-remove">&times;</span></li>
-          </ul>
-          <button class="remove-all-btn" id="remove-all" type="button">Remove all</button>
-        </div>
-      </div> -->
+<div id="wrapper">
+  <form [formGroup]="commentForm" (ngSubmit)="onSubmit()">
+      <label>
+          <textarea formControlName="comment" matInput placeholder="comment"></textarea>
+      </label>
+      <br/>
+      <button type="submit">Post</button>
+  </form>
+</div>

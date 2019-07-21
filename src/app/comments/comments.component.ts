@@ -1,25 +1,40 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from "rxjs";
+import { FormGroup, FormControl } from '@angular/forms';
 import { CommentService } from '../services/comment.service'
+
+//import { Comments } from '../services/comment'
 
 @Component({
   selector: 'app-comments',
   templateUrl: './comments.component.html',
   styleUrls: ['./comments.component.css']
 })
-export class CommentsComponent {
-  title = "Comments";  
-  comments;
+export class CommentsComponent implements OnInit {
 
-  constructor(service: CommentService) {
-    this.comments = service.getComments();
-  }
-}   
-    // ngOnInit(){
-    // }
+  commentForm = new FormGroup({
+    comment: new FormControl('')
+  });
+
+  constructor(private commentService: CommentService) { }
+
+  onSubmit(){
+    
+    let comment = {comment: {comment: this.commentForm.value.comment}};
+
+    this.commentService.addComment(comment).subscribe(data => {
+
+      console.log(data)
+    },
+    err => console.log(err))
   
-    // }
-      
+    }
+  ngOnInit(){
+  }
+
+
+}
+       
 
   //   let observable = Observable.create((observer:any) => {
   //     try {
@@ -131,5 +146,3 @@ export class CommentsComponent {
         
   //     }, true);
   //   }
-  // }
-    

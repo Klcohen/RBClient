@@ -1,35 +1,52 @@
-<div style="text-align: center">
-<h3>Choose Grid Size</h3>
+<div id="wrapper">
+
+  <!-- ******** GRID CREATE ******** -->
+  <br />
+  <form [formGroup]="sizePicker" (ngSubmit)="onSubmit($event)">
+    Grid Height:
+    <input type="number" matInput placeholder="1 - 20" formControlName="height" max="20" min="1" value="1">
+    Grid Width:
+    <input type="number" matInput placeholder="1 - 20" formControlName="width" max="20" min="1" value="1">
+    <button type="submit" mat-raised-button>Submit</button>
+  </form>
 
 
-<form [formGroup]="sizePicker" (ngSubmit)="onSubmit()">
-  Grid Height:    
-  <input type="number" formControlName="height" min="1" value="1">
-  Grid Width:     
-  <input type="number" formControlName="width" min="1" value="1">
-  <button type="submit">Submit</button>
-</form>
+  <!-- ******** COLOR PICKER ******** -->
+  <h3>Color Picker</h3>
+  <input [(ngModel)]="selectedColor" type="color" id="colorPicker">
+  <br />
+  <br />
 
 
-<h3>Color Picker</h3>
+  <!-- ******** CANVAS GRID ******** -->
+  <table id="pixel_canvas">
+    <ng-container *ngFor="let row of canvas; let i = index">
+      <tr>
+        <ng-container *ngFor="let column of row; let j = index">
+          <td (click)="onClick($event)" [ngClass]="['cell']" id={{i}},{{j}}
+            [ngStyle]="{'background-color' : '#ffffff'}">{{column}}</td>
+        </ng-container>
+      </tr>
+    </ng-container>
+  </table>
+  <br />
+  <br />
 
-<form [formGroup]="colorPicker" >
-<input formControlName="color" type="color" id="colorPicker" (ng-click)="pickColor()">
-</form>
 
-<br/>
-<br/>
+  <!-- ******** INSPIRE BUTTON ******** -->
+  <button mat-raised-button (click)="inspire($event)">Inspire me!</button>
+  <h3>{{inspiration}}</h3>
+  <br />
+  <br />
 
-<table id="pixel_canvas">
-  <ng-container *ngFor="let row of canvas; let i = index">
-   <tr><ng-container *ngFor="let column of row; let j = index">
-      <td>{{column}}</td>
-    </ng-container></tr>
-  </ng-container>
 
-</table>
-<br/>
-<br/>
+  <!-- ******** ART SUBMIT ******** -->
+  <form [formGroup]="artSubmit" (ngSubmit)="onPost($event)">
+    <input type="text" matInput formControlName="title" placeholder="Title">
+    <button type="submit" mat-raised-button>Post</button>
+  </form>
+
+
+
 </div>
-
 <script src="art-create.component.ts"></script>

@@ -1,6 +1,11 @@
-* {
+/* #wrapper {
+  text-align: center
+}  */
+
+
+/* {
     box-sizing: border-box;
-  }
+  } */
   .example-form {
     min-width: 150px;
     max-width: 500px;
@@ -13,7 +18,7 @@
   .list-group li {
     color: red;
     }
-  /* .warning {
+  .warning {
     background-color: orange;
     color: #fff;
     padding: 2em;
@@ -124,5 +129,5 @@
           display: inline-block;
         }
       }
-    } */
+    }
     

@@ -28,7 +28,16 @@ export class SignUpComponent implements OnInit {
 
    let user = {user: { username: this.signUpForm.value.username, email: this.signUpForm.value.email, password: this.signUpForm.value.password, bio: this.signUpForm.value.bio }} ;
 
-    this.userService.addUser(user).subscribe(data => console.log(data))
+    this.userService.addUser(user).subscribe(data => {
+      console.log(data)
+      localStorage.setItem('token', data.sessionToken),
+      localStorage.setItem('bio', data.user.bio);
+      localStorage.setItem('username', data.user.username)
+      localStorage.setItem('id', data.user.id)
+
+    alert("logged in!")
+  },
+  err => console.log(err))
 
   }
 

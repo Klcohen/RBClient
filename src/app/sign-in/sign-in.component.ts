@@ -5,6 +5,7 @@ import { HttpHeaders } from '@angular/common/http';
 import { UserService } from '../users/user.service'
 
 
+
 @Component({
   selector: 'app-sign-in',
   templateUrl: './sign-in.component.html',
@@ -26,8 +27,15 @@ onSubmit() {
 
   let userlog = {user: { email: this.signInForm.value.email, password: this.signInForm.value.password} };
 
-  this.userService.loginUser(userlog).subscribe(data => console.log(data))
-
+  this.userService.loginUser(userlog)
+  .subscribe(data => {
+    console.log(data)
+    localStorage.setItem('token', data.sessionToken)
+    localStorage.setItem('bio', data.user.bio);
+    localStorage.setItem('username', data.user.username)
+    localStorage.setItem('id', data.user.id)
+  },
+  err => console.log(err))
 
 
 }
