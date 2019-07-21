@@ -35,8 +35,9 @@ onSubmit() {
     localStorage.setItem('username', data.user.username)
     localStorage.setItem('id', data.user.id)
   },
-  err => console.log(err))
+  err => console.log(err));
 
+location.pathname ="profile"
 
 }
 

@@ -6,6 +6,7 @@ import { SignUpComponent} from '../sign-up/sign-up.component'
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { User } from '../users/user';
 import { FormGroup, FormControl } from '@angular/forms';
+import { ArtServiceService } from '../art-service/art-service.service'
 
 @Component({
   selector: 'app-profile',
@@ -19,7 +20,7 @@ export class ProfileComponent implements OnInit {
   id = localStorage.getItem('id')
 
 
-  constructor(private userService: UserService, public dialog: MatDialog) { }
+  constructor(private userService: UserService, public dialog: MatDialog, private artService: ArtServiceService) { }
 
   openDialog(): void {
     const dialogRef = this.dialog.open(EditBioBox, {
@@ -34,7 +35,19 @@ export class ProfileComponent implements OnInit {
     });
   }
 
+  art;
+  artTitle = localStorage.getItem('title')
+
   ngOnInit() {
+    
+    this.artService.getArtMine().subscribe(data => {
+      localStorage.setItem('title', data[0].title.value);
+      console.log(data)
+      
+        console.log(data)
+        this.art = data;
+
+    })
     // let OwnerId = localStorage.getItem('id')
     // this.userService.getUser(OwnerId).subscribe(data => {
     //   localStorage.setItem('bio', data.bio);
@@ -82,6 +95,7 @@ export class EditBioBox {
 
       this.userService.editUser(bio, ownerId).subscribe(data =>
         console.log(data))
+        window.location.reload();
     }
 
   onNoClick(): void {
