@@ -1,10 +1,9 @@
-<mat-card>
+<div id="wrapper">
   <form [formGroup]="commentForm" (ngSubmit)="onSubmit()">
-          <mat-card-title>leave a comment</mat-card-title>
       <label>
           <textarea formControlName="comment" matInput placeholder="comment"></textarea>
       </label>
       <br/>
       <button type="submit">Post</button>
   </form>
-</mat-card>
+</div>
