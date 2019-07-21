@@ -1,6 +1,11 @@
-* {
+/* #wrapper {
+  text-align: center
+}  */
+
+
+/* {
     box-sizing: border-box;
-  }
+  } */
   .example-form {
     min-width: 150px;
     max-width: 500px;

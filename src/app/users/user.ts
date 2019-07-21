@@ -5,9 +5,12 @@ export class User {
     password: string;
     bio: string;
   }
+  sessionToken?: string
   };
 export class UserLogin{
   user:{
   email: string;
   password: string;
-}}
+}
+sessionToken?: string
+}

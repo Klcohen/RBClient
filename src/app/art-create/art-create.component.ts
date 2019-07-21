@@ -65,8 +65,12 @@ export class ArtCreateComponent implements OnInit {
   // *****************************************
   onClick(event) {
     event.target.style.backgroundColor = this.selectedColor
-    // console.log(event)
-    // console.log(event.target.id)
+    console.log(event)
+    console.log(event.target.style.backgroundColor)
+    console.log(this.canvas[event.target.id.split(",", 1)])
+
+
+    console.log(event.target.id.split(",", 1))
     // console.log(this.selectedColor);
     // console.log (this.canvas)
 
@@ -77,7 +81,7 @@ export class ArtCreateComponent implements OnInit {
   // *****************************************
   inspire(event) {
     let words = [
-      'Tree', 'Beach', 'Mountains', 'Fall', 'Night Time', 'Rain', 'Sad', 'Happy', 'Sunset', 'Summer', 'Spring', 'Winter', 'Festival',
+      'Tree', 'Beach', 'Mountains', 'Fall', 'Night Time', 'Rain', 'Sunset', 'Summer', 'Spring', 'Winter', 'Festival',
       'Video Games', 'Arcade', 'Outer Space', 'Aliens', 'Wizard', 'Lizard', 'Frog', 'Ghost', 'Library', 'Flower'
     ];
     let word = words[Math.floor(Math.random() * words.length)]
