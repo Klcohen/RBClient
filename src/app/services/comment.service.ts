@@ -27,13 +27,17 @@ export class CommentService {
 commentUrl = `http://localhost:3001/comments/`;
 
 
-addComment(comment : Comment): Observable<Comment> {
-  return this.http.post<Comment>(this.commentUrl, comment ,httpOptions)
-  // .pipe(
-  //   catchError(this.handleError( user ))
-  //   );
-};
+// addComment(comment : Comment): Observable<Comment> {
+//   return this.http.post<Comment>(this.commentUrl, comment ,httpOptions)
+//   // .pipe(
+//   //   catchError(this.handleError( user ))
+//   //   );
+// };
 
+addComment(comment: Comment): Observable<Comment> {
+  console.log(localStorage.getItem('token'))
+  return this.http.post<Comment>(this.commentUrl, comment, httpOptions)
+};
 // private handleError(error: HttpErrorResponse) {
 //   if (error.error instanceof ErrorEvent) {
 //     // A client-side or network error occurred. Handle it accordingly.

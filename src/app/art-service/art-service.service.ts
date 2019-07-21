@@ -31,7 +31,7 @@ export class ArtServiceService {
 artCreateUrl = `http://localhost:3001/art/`
 artFeedUrl = `http://localhost:3001/art/feed`
 artPersonalUrl = `http://localhost:3001/art/mine`
-artDeleteUrl= `http://localhost:3001/art/:id`
+artDeleteUrl= `http://localhost:3001/art/`
 
 
 createArt(art: Art): Observable<Art> {
@@ -40,11 +40,18 @@ createArt(art: Art): Observable<Art> {
 };
 
 getArt() {
-  return this.http.get<Art>(this.artFeedUrl, httpOptions)
+  return this.http.get<Art>(this.artFeedUrl, httpOptionsOne)
+}
+getArtMine() {
+  return this.http.get<Art>(this.artPersonalUrl, httpOptions)
 }
 
-deleteArt() {
-  return this.http.delete<Art>(this.artDeleteUrl, httpOptions)
+editArt(postId) {
+  return this.http.delete<Art>(`${this.artDeleteUrl}${postId}`, httpOptions)
+}
+
+deleteArt(postId) {
+  return this.http.delete<Art>(`${this.artDeleteUrl}${postId}`, httpOptions)
 }
 
 }
