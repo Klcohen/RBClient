@@ -1,3 +1,15 @@
-#wrapper {
-  background-color: darkslateblue
+div {
+  background-color: #222222;
+  text-align: center;
+  justify-content: center; 
+  display: flex-box;
+  height: 100%;
+  width: 100%;
+}
+
+mat-card {
+  width: 70vh; 
+  margin-left: 50vh; 
+  margin-right: 50vh;
+  background-color: #eeeeee;
 }

@@ -1,6 +1,6 @@
 export class Art {
   art:{
-    image?: object;
+    // image: object;
     title: string;
     // tags: string;
     owner?: number;
