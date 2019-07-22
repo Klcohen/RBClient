@@ -1,9 +1,8 @@
-<div id=#wrapper style="text-align: center;
-background-color: darkgrey; justify-content: center; display: flex-box;">
+<div id=#wrapper>
 <ng-container *ngFor="let title of art; let i = index">
   <br />
   <br />
-   <mat-card style="width: 70vh; margin-left: 50vh; margin-right: 50vh;"> 
+   <mat-card> 
     <h3>Title: {{title.title}}</h3>
     <h3>Creator: {{title.owner}}</h3>
     <h3>Art ID:  {{title.id}}</h3>

@@ -1,0 +1,14 @@
+div {
+  background-color: #811C77;
+  width:100vw; 
+  height:3vw;
+}
+
+nav {
+  padding-top: 1vh;
+}
+
+a {
+  padding: 1em;
+  color: white;
+}

@@ -68,7 +68,7 @@ export class ArtCreateComponent implements OnInit {
     event.target.style.backgroundColor = this.selectedColor
     console.log(event)
     console.log(event.target.style.backgroundColor)
-    // console.log(this.canvas[event.target.id.split(",", 1)])
+    console.log(this.canvas[event.target.id.split(",", 1)])
 
 
     // console.log(event.target.id.split(",", 1))
@@ -95,7 +95,7 @@ export class ArtCreateComponent implements OnInit {
   // *****************************************
   onPost(event) {
     let artPost = { art: { title: this.artSubmit.value.title} }
-
+    console.log(event)
     this.artService.createArt(artPost)
     .subscribe(data => {
       console.log(data)
@@ -104,7 +104,7 @@ export class ArtCreateComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    
   }
 
 }
