@@ -39,7 +39,7 @@ export class SignUpComponent implements OnInit {
   },
   err => console.log(err))
 
-  location.pathname ="profile"
+
   }
 
   ngOnInit() {

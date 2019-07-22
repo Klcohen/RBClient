@@ -37,7 +37,7 @@ onSubmit() {
   },
   err => console.log(err));
 
-location.pathname ="profile"
+
 
 }
 

@@ -24,8 +24,7 @@ export class ArtCreateComponent implements OnInit {
   // ART SUBMIT FORM
 
   artSubmit = new FormGroup({
-    title: new FormControl(''),
-    tags: new FormControl('')
+    title: new FormControl('')
   })
 
   canvas: any[];
@@ -94,7 +93,7 @@ export class ArtCreateComponent implements OnInit {
   // ART POST
   // *****************************************
   onPost() {
-    let artPost = { art: { title: this.artSubmit.value.title, tags: this.artSubmit.value.tags } }
+    let artPost = { art: { title: this.artSubmit.value.title} }
 
     this.artService.createArt(artPost)
     .subscribe(data => {
