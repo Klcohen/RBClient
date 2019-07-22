@@ -25,7 +25,7 @@ export class ArtCreateComponent implements OnInit {
 
   artSubmit = new FormGroup({
     title: new FormControl(''),
-    tags: new FormControl('')
+    // tags: new FormControl('')
   })
 
   canvas: any[];
@@ -68,10 +68,10 @@ export class ArtCreateComponent implements OnInit {
     event.target.style.backgroundColor = this.selectedColor
     console.log(event)
     console.log(event.target.style.backgroundColor)
-    console.log(this.canvas[event.target.id.split(",", 1)])
+    // console.log(this.canvas[event.target.id.split(",", 1)])
 
 
-    console.log(event.target.id.split(",", 1))
+    // console.log(event.target.id.split(",", 1))
     // console.log(this.selectedColor);
     // console.log (this.canvas)
 
@@ -93,8 +93,8 @@ export class ArtCreateComponent implements OnInit {
   //****************************************** 
   // ART POST
   // *****************************************
-  onPost() {
-    let artPost = { art: { title: this.artSubmit.value.title, tags: this.artSubmit.value.tags } }
+  onPost(event) {
+    let artPost = { art: { title: this.artSubmit.value.title} }
 
     this.artService.createArt(artPost)
     .subscribe(data => {
