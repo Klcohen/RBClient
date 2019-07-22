@@ -1,8 +1,8 @@
 export class Comment {
-    comment: {
+    comments: {
         comment: string;
-        // username: string;
-        // post: string;
-        // owner: string;
+        username?: string;
+        post?: string;
+        owner?: string;
     } 
 };
