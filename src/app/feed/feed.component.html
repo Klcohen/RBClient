@@ -1,4 +1,4 @@
-<div id=#wrapper>
+
   <ng-container *ngFor="let art of artList; let x = index">
     <br />
     <br />
@@ -22,3 +22,8 @@
 
   </ng-container>
 </div>
+
+<ng-container *ngFor="let title of art; let i = index">
+<app-feed-card [art]="art"></app-feed-card>
+
+</ng-container>

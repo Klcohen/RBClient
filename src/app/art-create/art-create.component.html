@@ -42,7 +42,9 @@
   <!-- ******** ART SUBMIT ******** -->
   <form [formGroup]="artSubmit" (ngSubmit)="onPost($event)">
     <input type="text" matInput formControlName="title" placeholder="Title">
+
     <!-- <input type="text" matInput formControlName="tags" placeholder="Tags"> -->
+
     <button type="submit" mat-raised-button>Post</button>
   </form>
 

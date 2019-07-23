@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CommentsComponent } from '../comments/comments.component';
-import { ArtServiceService } from '../art-service/art-service.service'
+import { ArtServiceService } from '../art-service/art-service.service';
+import { CommentService } from '../services/comment.service'
+// import { post } from 'selenium-webdriver/http';
+
 
 
 @Component({
@@ -9,6 +12,7 @@ import { ArtServiceService } from '../art-service/art-service.service'
   styleUrls: ['./feed.component.css']
 })
 export class FeedComponent implements OnInit {
+
   artList;
   constructor(private artService: ArtServiceService) { }
 
@@ -24,6 +28,7 @@ export class FeedComponent implements OnInit {
         console.log(data)
         this.artList = data.reverse();
     })
+
 
   }
 

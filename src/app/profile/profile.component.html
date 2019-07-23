@@ -21,4 +21,8 @@
 
   </ng-container>
 
-</div>
+
+<ng-container *ngFor="let title of art; let i = index">
+    <app-feed-card-personal ></app-feed-card-personal>
+</ng-container>
+

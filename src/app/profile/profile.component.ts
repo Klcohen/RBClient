@@ -41,22 +41,24 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
     
     this.artService.getArtMine().subscribe(data => {
-      localStorage.setItem('title', data[0].title.value);
+      localStorage.setItem('post', data[0].title.value);
       console.log(data)
       
         console.log(data)
         this.art = data;
 
     })
-    // let OwnerId = localStorage.getItem('id')
-    // this.userService.getUser(OwnerId).subscribe(data => {
-    //   localStorage.setItem('bio', data.bio);
-    //   localStorage.setItem('username', data.username)
-    //   localStorage.setItem('id', data.id)
-    //   console.log()
-    //   return data
-    // })
+
   }
+  // deletePost(){
+
+  //   let postId = this.art
+  //   console.log(postId)
+  //   // this.artService.deleteArt(postId).subscribe()
+  //   // alert("your account has been deleted once you logout you'll have to make a new one")
+  //   // window.location.reload();
+  // }
+
 
 
   logout(){
