@@ -9,19 +9,20 @@ import { ArtServiceService } from '../art-service/art-service.service'
   styleUrls: ['./feed.component.css']
 })
 export class FeedComponent implements OnInit {
-  art;
-  artTitle = localStorage.getItem('title')
-
+  artList;
   constructor(private artService: ArtServiceService) { }
+
+  bgColor(i : number, j : number, x : number) {
+    const color = this.artList[x].image[i][j]
+    return { "background-color": color ? color : "#ffffff" }
+  }
 
   ngOnInit() {
     this.artService.getArt().subscribe(data => {
-      localStorage.setItem('title', data[0].title.value);
       console.log(data)
       
         console.log(data)
-        this.art = data;
-
+        this.artList = data.reverse();
     })
 
   }
