@@ -12,24 +12,18 @@ import { CommentService } from '../services/comment.service'
   styleUrls: ['./feed.component.css']
 })
 export class FeedComponent implements OnInit {
-
-  artList;
-  constructor(private artService: ArtServiceService) { }
-
-  bgColor(i : number, j : number, x : number) {
-    const color = this.artList[x].image[i][j]
-    return { "background-color": color ? color : "#ffffff" }
-  }
-
+  artList=[];
+ 
+  constructor(private artService: ArtServiceService, private commentService: CommentService) { }
+  
   ngOnInit() {
-    this.artService.getArt().subscribe(data => {
-      console.log(data)
-      
-        console.log(data)
-        this.artList = data.reverse();
-    })
+    this.artService.getArt().subscribe(art =>{
 
-
+      this.artList.push(art.reverse());
+  }
+    )
+    // let postId = 9
+    // this.commentService.getComment(postId).subscribe()
   }
 
 }

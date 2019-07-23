@@ -1,4 +1,4 @@
-import { Art } from './art-service'
+import { Art, Title } from './art-service'
 import { catchError, retry } from 'rxjs/operators';
 import { Injectable} from '@angular/core';
 import { HttpParams, HttpClient, HttpHeaders } from '@angular/common/http';
@@ -44,11 +44,11 @@ getArt() {
 }
 
 getArtMine() {
-  return this.http.get<Art>(this.artPersonalUrl, httpOptions)
+  return this.http.get<Art[]>(this.artPersonalUrl, httpOptions)
 }
 
-editArt(postId) {
-  return this.http.delete<Art>(`${this.artDeleteUrl}${postId}`, httpOptions)
+editArt(title: Title, postId):Observable<Title> {
+  return this.http.put<Title>(`${this.artDeleteUrl}${postId}`, title, httpOptions)
 }
 
 deleteArt(postId) {

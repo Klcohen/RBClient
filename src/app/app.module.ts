@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { FeedCardComponent } from './feed-card/feed-card.component';
-import { FeedCardPersonalComponent } from './feed-card-personal/feed-card-personal.component';
+import { FeedCardPersonalComponent, EditTitleBox } from './feed-card-personal/feed-card-personal.component';
 import { CommentsComponent } from './comments/comments.component';
 import { ProfileComponent, EditBioBox } from './profile/profile.component';
 import { JournalComponent } from './journal/journal.component';
@@ -49,7 +49,8 @@ import { MatDialogModule } from '@angular/material';
     FeedCardPersonalComponent,
     SignInComponent,
     SignUpComponent,
-    EditBioBox
+    EditBioBox,
+    EditTitleBox
   ],
   imports: [
     BrowserModule,
@@ -66,7 +67,7 @@ import { MatDialogModule } from '@angular/material';
 
 
   ],
-  entryComponents:[EditBioBox],
+  entryComponents:[EditBioBox, EditTitleBox],
   providers: [CommentService, AuthGuardService, AuthService, JwtHelperService,{provide:JWT_OPTIONS,useValue:JWT_OPTIONS}],
   bootstrap: [AppComponent],
 

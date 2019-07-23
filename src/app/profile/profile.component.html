@@ -5,24 +5,7 @@
   <h4>{{bio}}</h4>
   <button (click)="openDialog()" id="edit-btn" mat-raised-button class="btn btn-primary">Edit Bio</button>
 
-  <ng-container *ngFor="let title of art; let i = index">
-    <br />
-    <br />
-    <mat-card>
-      <h3>Title: {{title.title}}</h3>
-      <h3>Creator: {{title.owner}}</h3>
-      <h3>Art ID: {{title.id}}</h3>
-      <img
-        src="https://i.pinimg.com/474x/a2/bc/9f/a2bc9f945bdbcbbec6648d14356974e4--fuse-bead-patterns-perler-patterns.jpg">
-      <!-- <h3>Art:  {{title.image}}</h3> -->
-      <app-comments></app-comments>
-    </mat-card>
-    <br />
-
-  </ng-container>
-
-
-<ng-container *ngFor="let title of art; let i = index">
-    <app-feed-card-personal ></app-feed-card-personal>
-</ng-container>
-
+  <ng-container *ngFor="let art of artList; let x = index">
+    <app-feed-card-personal [art]="art"></app-feed-card-personal>
+    
+    </ng-container>
