@@ -1,0 +1,30 @@
+*{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+#wrapper{
+  background-color: #444444;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  justify-content: center; 
+  display: flex-box;
+}
+
+button { 
+  background-color:	#df3d5e	;
+  border-radius: 2px;
+}
+
+.btn {
+  float: right;
+}
+
+mat-card {
+    width: 70vh; 
+    margin-left: 50vh; 
+    margin-right: 50vh;
+    background-color: whitesmoke;
+    color: black;
+}
+

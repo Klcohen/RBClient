@@ -1,7 +1,12 @@
+*{
+  color: white;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
 #wrapper {
   text-align: center;
   justify-content: center;
-  background-color: #222222;
+  background-color: #444444;
   width: 100%;
   height: 100vh
 }
@@ -45,12 +50,34 @@ td {
 
 input[type=number] {
   width: 8vh;
-  height: 2.5vh;
+  height: 2.8vh;
   margin: 1em;
 }
 
 input[type=text] {
-  width: 12vh;
-  height: 2.5vh;
+  width: 15vh;
+  height: 3vh;
   margin: 1em;
+}
+
+button { 
+  background-color:	#df3d5e	;
+  border-radius: 2px;
+  box-shadow: 3px 3px 2px rgba(0, 0, 0, .1);
+  text-align: center;
+  border: none;
+  font-size: 1em
+}
+
+#inspire {
+  height: 5vh;
+  width: 20vh;
+
+}
+
+input{
+  background-color: 666666;
+  border: solid 2px 000000;
+  color: black;
+  border-radius: 2px;
 }
