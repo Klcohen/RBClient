@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CommentsComponent } from '../comments/comments.component';
-import { ArtServiceService } from '../art-service/art-service.service'
+import { ArtServiceService } from '../art-service/art-service.service';
+import { CommentService } from '../services/comment.service'
+// import { post } from 'selenium-webdriver/http';
+
 
 
 @Component({
@@ -10,19 +13,13 @@ import { ArtServiceService } from '../art-service/art-service.service'
 })
 export class FeedComponent implements OnInit {
   art;
-  artTitle = localStorage.getItem('title')
-
-  constructor(private artService: ArtServiceService) { }
-
+ 
+  constructor(private artService: ArtServiceService, private commentService: CommentService) { }
+  
   ngOnInit() {
-    this.artService.getArt().subscribe(data => {
-      localStorage.setItem('title', data[0].title.value);
-      console.log(data)
-      
-        console.log(data)
-        this.art = data;
-
-    })
+    this.artService.getArt().subscribe(art => this.art = art)
+    let postId = 9
+    this.commentService.getComment(postId).subscribe()
 
   }
 
