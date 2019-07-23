@@ -1,0 +1,13 @@
+<div id=#wrapper>
+  <ng-container *ngFor="let u of users; let x = index">
+    <br />
+    <br />
+    <mat-card>
+      <h3> user: {{u.id}}</h3>
+      <h3>{{u.username}}</h3>
+      <h3>{{u.email}}</h3>
+
+    </mat-card>
+    <br />
+  </ng-container>
+</div>

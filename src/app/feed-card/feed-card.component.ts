@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ArtServiceService } from '../art-service/art-service.service';
-// import { post } from 'selenium-webdriver/http';
 
 @Component({
   selector: 'app-feed-card',
@@ -10,6 +9,7 @@ import { ArtServiceService } from '../art-service/art-service.service';
 export class FeedCardComponent implements OnInit {
   @Input() art
   
+
   // card;
 
   // artList;
@@ -19,12 +19,18 @@ export class FeedCardComponent implements OnInit {
     const color = this.art[x].image[i][j]
     return { "background-color": color ? color : "#ffffff" }
   }
+
+  admin(){
+
+
+
+  }
   ngOnInit() {
   //  for ( let i = 0; i < this.art.length; i++) {
     //  let card = this.art[i]
     //  console.log(card)
-     console.log(this.art)
-     
+    //  console.log(this.art)
+
    
 // return this.card
 }
