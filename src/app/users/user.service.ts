@@ -49,6 +49,10 @@ getUser(OwnerId) {
   return this.http.get<User>(`${this.userUrl}${OwnerId}`, httpOptions)
 }
 
+getUserAll() {
+  return this.http.get<User>(`${this.userUrl}`, httpOptions)
+}
+
 editUser(bio: Bio, OwnerId): Observable<Bio> {
   return this.http.put<Bio>(`${this.userUrl}${OwnerId}`,bio, httpOptions)
 }
