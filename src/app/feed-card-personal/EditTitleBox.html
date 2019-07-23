@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>Hi {{username}}</h1>
+<form [formGroup]="TitleEdit" (ngSubmit)="onSubmit()">
+
+  <p>What would you like your new title to say?</p>
+  <label>
+    <input formControlName="title" matInput>
+  </label>
+
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button type="submit">Ok</button>
+</form>

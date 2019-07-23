@@ -1,4 +1,4 @@
-import { Art } from './art-service'
+import { Art, Title } from './art-service'
 import { catchError, retry } from 'rxjs/operators';
 import { Injectable} from '@angular/core';
 import { HttpParams, HttpClient, HttpHeaders } from '@angular/common/http';
@@ -28,10 +28,10 @@ export class ArtServiceService {
 
   constructor(private http: HttpClient) { }
 
-artCreateUrl = `http://localhost:3001/art/`
-artFeedUrl = `http://localhost:3001/art/feed`
-artPersonalUrl = `http://localhost:3001/art/mine`
-artDeleteUrl= `http://localhost:3001/art/`
+artCreateUrl = `https://pixspire-server.herokuapp.com/art/`
+artFeedUrl = `https://pixspire-server.herokuapp.com/art/feed`
+artPersonalUrl = `https://pixspire-server.herokuapp.com/art/mine`
+artDeleteUrl= `https://pixspire-server.herokuapp.com/art/`
 
 
 createArt(art: Art): Observable<Art> {
@@ -44,11 +44,11 @@ getArt() {
 }
 
 getArtMine() {
-  return this.http.get<Art>(this.artPersonalUrl, httpOptions)
+  return this.http.get<Art[]>(this.artPersonalUrl, httpOptions)
 }
 
-editArt(postId) {
-  return this.http.delete<Art>(`${this.artDeleteUrl}${postId}`, httpOptions)
+editArt(title: Title, postId):Observable<Title> {
+  return this.http.put<Title>(`${this.artDeleteUrl}${postId}`, title, httpOptions)
 }
 
 deleteArt(postId) {

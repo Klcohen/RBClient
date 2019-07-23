@@ -33,9 +33,9 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
  // HOW TO DO???
-signUpUrl = `http://localhost:3001/user/signUp`;
-signInUrl = `http://localhost:3001/user/login`;
-userUrl= `http://localhost:3001/user/`;
+signUpUrl = `https://pixspire-server.herokuapp.com/user/signUp`;
+signInUrl = `https://pixspire-server.herokuapp.com/user/login`;
+userUrl= `https://pixspire-server.herokuapp.com/user/`;
 
 addUser(user: User): Observable<User> {
   return this.http.post<User>(this.signUpUrl, user ,httpOptionsOne)

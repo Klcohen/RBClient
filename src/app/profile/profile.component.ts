@@ -18,7 +18,8 @@ export class ProfileComponent implements OnInit {
   bio = localStorage.getItem('bio')
   username = localStorage.getItem('username')
   id = localStorage.getItem('id')
-
+  
+  artList=[];
 
   constructor(private userService: UserService, public dialog: MatDialog, private artService: ArtServiceService) { }
 
@@ -38,16 +39,25 @@ export class ProfileComponent implements OnInit {
   art;
   artTitle = localStorage.getItem('title')
 
-  ngOnInit() {
+  // ngOnInit() {
     
-    this.artService.getArtMine().subscribe(data => {
-      localStorage.setItem('post', data[0].title.value);
-      console.log(data)
+  //   this.artService.getArtMine().subscribe(data => {
+  //     localStorage.setItem('post', data[0].title.value);
+  //     console.log(data)
       
-        console.log(data)
-        this.art = data;
+  //       console.log(data)
+  //       this.art = data;
 
-    })
+  //   })
+    ngOnInit() {
+      this.artService.getArtMine().subscribe(art =>{
+  
+        this.artList.push(art.reverse());
+    }
+      )
+      // let postId = 9
+      // this.commentService.getComment(postId).subscribe()
+    
 
   }
   // deletePost(){

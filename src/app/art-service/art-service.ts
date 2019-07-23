@@ -6,3 +6,12 @@ export class Art {
     owner?: number;
   }
 };
+
+export class Title {
+  art:{
+    title: string;
+    // tags: string;
+    owner?: number;
+  }
+};
+

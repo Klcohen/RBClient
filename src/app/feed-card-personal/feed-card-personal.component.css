@@ -1,0 +1,31 @@
+div {
+  background-color: #222222;
+  text-align: center;
+  justify-content: center; 
+  display: flex-box;
+  height: 100%;
+  width: 100%;
+}
+
+mat-card {
+  width: 70vh; 
+  margin-left: 50vh; 
+  margin-right: 50vh;
+  background-color: #eeeeee;
+}
+
+table,
+tr,
+td {
+border: 1px solid black;
+}
+table {
+border-collapse: collapse;
+margin: 0 auto;
+}
+tr {
+height: 20px;
+}
+td {
+width: 20px;
+}
