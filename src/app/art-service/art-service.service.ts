@@ -28,10 +28,10 @@ export class ArtServiceService {
 
   constructor(private http: HttpClient) { }
 
-artCreateUrl = `http://localhost:3001/art/`
-artFeedUrl = `http://localhost:3001/art/feed`
-artPersonalUrl = `http://localhost:3001/art/mine`
-artDeleteUrl= `http://localhost:3001/art/`
+artCreateUrl = `https://pixspire-server.herokuapp.com/art/`
+artFeedUrl = `https://pixspire-server.herokuapp.com/art/feed`
+artPersonalUrl = `https://pixspire-server.herokuapp.com/art/mine`
+artDeleteUrl= `https://pixspire-server.herokuapp.com/art/`
 
 
 createArt(art: Art): Observable<Art> {

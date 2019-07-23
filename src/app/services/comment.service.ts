@@ -24,7 +24,7 @@ export class CommentService {
   constructor(private http: HttpClient) { }
 
  // HOW TO DO???
-commentUrl = `http://localhost:3001/comments/`;
+commentUrl = `https://pixspire-server.herokuapp.com/comments/`;
 
 
 

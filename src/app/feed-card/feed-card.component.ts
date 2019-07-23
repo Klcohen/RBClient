@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+// import { post } from 'selenium-webdriver/http';
 
 @Component({
   selector: 'app-feed-card',
@@ -8,10 +9,15 @@ import { Component, OnInit, Input } from '@angular/core';
 export class FeedCardComponent implements OnInit {
   @Input() art
 
-
+  card;
+  
   constructor() { }
-  ngOnInit() {
-    console.log(this.art[4])
-  }
 
+  ngOnInit() {
+   for ( let i = 0; i < this.art.length; i++) {
+     let card = this.art[i]
+     console.log(card)
+   }
+
+  }
 }

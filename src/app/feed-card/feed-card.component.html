@@ -1,15 +1,17 @@
+
 <div id=#wrapper style="text-align: center">
+  <ng-container *ngFor="let i of art; let i = index">
   <br />
   <br />
-  <ng-container *ngFor="let title of art; let i = index">
-   <mat-card style="width: 70vh; margin-left: 50vh; margin-right: 50vh;"> 
-    <h3>Title:{{art[4].title}}</h3>
-    <h3>Creator:{{art[2].owner}} </h3>
-    <h3>{{id}}</h3>
+   <mat-card style="width: 70vh; margin-left: 50vh; margin-right: 50vh;">
+
+    <h3>Title:{{card.title}}</h3>
+    <!-- <h3>Creator:{{art}} </h3>
+    <h3>{{art}}</h3> -->
     <img src="https://i.pinimg.com/474x/a2/bc/9f/a2bc9f945bdbcbbec6648d14356974e4--fuse-bead-patterns-perler-patterns.jpg">
     <!-- <h3>Art:  {{title.image}}</h3> -->
     <app-comments></app-comments>
   </mat-card>
-</ng-container>
   <br/>
+</ng-container>
 </div>
