@@ -17,8 +17,8 @@ import { ArtServiceService } from '../art-service/art-service.service'
 export class ArtCreateComponent implements OnInit {
   // CANVAS CREATE FROM
   sizePicker = new FormGroup({
-    height: new FormControl(''),
-    width: new FormControl(''),
+    height: new FormControl(10),
+    width: new FormControl(10),
   });
 
   // ART SUBMIT FORM
@@ -40,12 +40,12 @@ export class ArtCreateComponent implements OnInit {
   //****************************************** 
   // CREATE GRID
   // *****************************************
-  onSubmit(event) {
+  createCanvas() {
     // console.warn(this.sizePicker.value);
     let gridHeight = this.sizePicker.value.height;
     let gridWidth = this.sizePicker.value.width;
 
-    // USE ARRAY METHODS TO CLEAN UP AND SHORTEN
+
     let canvas = []
     for (let row = 0; row < gridHeight; row++) {
       for (let column = 0; column < gridWidth; column++) {
@@ -60,23 +60,29 @@ export class ArtCreateComponent implements OnInit {
     console.log(canvas)
     // console.log(event)
     this.canvas = canvas
-
   }
+
+  onSubmit(event) {
+    this.createCanvas()
+  }
+
 
   //****************************************** 
   // CANVAS COLORING
   // *****************************************
   onClick(event) {
-    event.target.style.backgroundColor = this.selectedColor
-    console.log(event)
-    console.log(event.target.style.backgroundColor)
-    console.log(this.canvas[event.target.id.split(",", 1)])
-
-
+    const [row, column] = event.target.id.split(",")
+    // event.target.style.backgroundColor = this.selectedColor
+    this.canvas[row][column] = this.selectedColor
     // console.log(event.target.id.split(",", 1))
     // console.log(this.selectedColor);
-    // console.log (this.canvas)
+    console.log(this.canvas)
+  }
 
+
+  bgColor(i : number, j : number) {
+    const color = this.canvas[i][j]
+    return { "background-color": color ? color : "#ffffff" }
   }
 
   //****************************************** 
@@ -97,18 +103,19 @@ export class ArtCreateComponent implements OnInit {
   // *****************************************
 
   onPost(event) {
-    let artPost = { art: { title: this.artSubmit.value.title} }
+    let artPost = { art: { title: this.artSubmit.value.title, image: this.canvas} }
     console.log(event)
 
     this.artService.createArt(artPost)
-    .subscribe(data => {
-      console.log(data)
-    })
+      .subscribe(data => {
+        console.log(data)
+      })
 
   }
 
   ngOnInit() {
-    
+    this.createCanvas()
+
   }
 
 }

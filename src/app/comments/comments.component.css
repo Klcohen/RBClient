@@ -1,3 +1,21 @@
+
+button {
+  background-color:	#df3d5e;
+  color: white;
+  border-radius: 2px;
+}
+
+textarea {
+  width: 74%;
+  border-radius: 2px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  height: 40px
+}
+
+
+
+
 /* #wrapper {
   text-align: center
 }  */
@@ -6,7 +24,7 @@
 /* {
     box-sizing: border-box;
   } */
-  .example-form {
+  /* .example-form {
     min-width: 150px;
     max-width: 500px;
     width: 100%;
@@ -34,6 +52,7 @@
     font-family: 'Montserrat', sans-serif;
     color: #4a4a4a;
     font-size: 45px;
+    
     .container {
       max-width: 1120px;
       margin: auto;
@@ -130,4 +149,4 @@
         }
       }
     }
-    
+     */

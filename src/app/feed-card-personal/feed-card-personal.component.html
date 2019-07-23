@@ -1,17 +1,29 @@
-<div id=#wrapper style="text-align: center">
-  <br />
-  <br />
-   <mat-card style="width: 70vh; margin-left: 50vh; margin-right: 50vh;"> 
-    <h3>Title: </h3>
-    <h3>Creator: {{data}}</h3>
-    <h3>{{post.id}}</h3>
-    <img src="https://i.pinimg.com/474x/a2/bc/9f/a2bc9f945bdbcbbec6648d14356974e4--fuse-bead-patterns-perler-patterns.jpg">
-    <!-- <h3>Art:  {{title.image}}</h3> -->
-    <app-comments></app-comments>
-    <button (click)="openDialogTwo()" class="btn btn-primary">Edit title</button>
+<div id=#wrapper>
+  <ng-container *ngFor="let a of art; let x = index">
+    <br />
+    <br />
+    <mat-card>
+      <h3>Title: {{a.title}}</h3>
 
-    <button (click)="deletePost()">Delete Post</button>
-    <br/>
-  </mat-card>
-  <br/>
-</div>
+ 
+      <!-- <img src="https://i.pinimg.com/474x/a2/bc/9f/a2bc9f945bdbcbbec6648d14356974e4--fuse-bead-patterns-perler-patterns.jpg(34 kB)
+ https://i.pinimg.com/474x/a2/bc/9f/a2bc9f945bdbcbbec6648d14356974e4--fuse-bead-patterns-perler-patterns.jpg
+ "> -->
+ <table id="pixel_canvas">
+   <ng-container *ngFor="let row of a.image; let i = index">
+     <tr>
+       <ng-container *ngFor="let column of row; let j = index">
+         <td [ngClass]="['cell']" [ngStyle]="bgColor(i, j, x)"></td>
+        </ng-container>
+      </tr>
+    </ng-container>
+  </table>
+  <button (click)="openDialog(x)" x= a.id  class="btn btn-primary">Edit title</button>
+ 
+  <button (click)="deletePost(x)" x= a.id >Delete Post</button>
+      <!-- <app-comments></app-comments> -->
+    </mat-card>
+    <br />
+  </ng-container>
+ </div>
+  

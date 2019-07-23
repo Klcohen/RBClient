@@ -12,15 +12,18 @@ import { CommentService } from '../services/comment.service'
   styleUrls: ['./feed.component.css']
 })
 export class FeedComponent implements OnInit {
-  art;
+  artList=[];
  
   constructor(private artService: ArtServiceService, private commentService: CommentService) { }
   
   ngOnInit() {
-    this.artService.getArt().subscribe(art => this.art = art)
-    let postId = 9
-    this.commentService.getComment(postId).subscribe()
+    this.artService.getArt().subscribe(art =>{
 
+      this.artList.push(art.reverse());
+  }
+    )
+    // let postId = 9
+    // this.commentService.getComment(postId).subscribe()
   }
 
 }

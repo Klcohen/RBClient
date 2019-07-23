@@ -12,7 +12,7 @@
 
 
   <!-- ******** COLOR PICKER ******** -->
-  <h3>Color Picker</h3>
+  <p>Color Picker</p>
   <input [(ngModel)]="selectedColor" type="color" id="colorPicker">
   <br />
   <br />
@@ -23,8 +23,7 @@
     <ng-container *ngFor="let row of canvas; let i = index">
       <tr>
         <ng-container *ngFor="let column of row; let j = index">
-          <td (click)="onClick($event)" [ngClass]="['cell']" id={{i}},{{j}}
-            [ngStyle]="{'background-color' : '#ffffff'}">{{column}}</td>
+          <td (click)="onClick($event)" [ngClass]="['cell']" id={{i}},{{j}} [ngStyle]="bgColor(i, j)"></td>
         </ng-container>
       </tr>
     </ng-container>
@@ -34,7 +33,7 @@
 
 
   <!-- ******** INSPIRE BUTTON ******** -->
-  <button mat-raised-button (click)="inspire($event)">Inspire me!</button>
+  <button (click)="inspire($event)" id="inspire">Inspire me!</button>
   <h3>{{inspiration}}</h3>
   <br />
   <br />
