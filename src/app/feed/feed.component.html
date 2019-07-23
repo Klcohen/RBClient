@@ -1,22 +1,28 @@
-<!-- 
-<div id=#wrapper>
 
-<ng-container *ngFor="let title of art; let i = index">
-  <br />
-  <br />
-   <mat-card> 
-    <h3>Title: {{title.title}}</h3>
-    <h3>Creator: {{title.owner}}</h3>
-    <h3>{{title.id}}</h3>
-    <img src="https://i.pinimg.com/474x/a2/bc/9f/a2bc9f945bdbcbbec6648d14356974e4--fuse-bead-patterns-perler-patterns.jpg">
-    <h3>Art:  {{title.image}}</h3>
-    {{comment}}
-    <app-comments></app-comments>
-  </mat-card>
-  <br/>
+  <ng-container *ngFor="let art of artList; let x = index">
+    <br />
+    <br />
+    <mat-card>
+      <h3>Title: {{art.title}}</h3>
+      <h3>Creator: {{art.owner}}</h3>
+      <h3>Art ID: {{art.id}}</h3>
+      <!-- <img src="https://i.pinimg.com/474x/a2/bc/9f/a2bc9f945bdbcbbec6648d14356974e4--fuse-bead-patterns-perler-patterns.jpg"> -->
+        <table id="pixel_canvas">
+          <ng-container *ngFor="let row of art.image; let i = index">
+            <tr>
+              <ng-container *ngFor="let column of row; let j = index">
+                <td [ngClass]="['cell']" [ngStyle]="bgColor(i, j, x)"></td>
+              </ng-container>
+            </tr>
+          </ng-container>
+        </table>
+      <app-comments></app-comments>
+    </mat-card>
+    <br />
 
-</ng-container>
-</div> --> 
+  </ng-container>
+</div>
+
 <ng-container *ngFor="let title of art; let i = index">
 <app-feed-card [art]="art"></app-feed-card>
 

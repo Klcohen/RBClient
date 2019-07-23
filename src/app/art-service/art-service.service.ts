@@ -40,8 +40,9 @@ createArt(art: Art): Observable<Art> {
 };
 
 getArt() {
-  return this.http.get<Art>(this.artFeedUrl, httpOptionsOne)
+  return this.http.get<Art[]>(this.artFeedUrl, httpOptionsOne)
 }
+
 getArtMine() {
   return this.http.get<Art>(this.artPersonalUrl, httpOptions)
 }
