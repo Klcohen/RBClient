@@ -6,9 +6,9 @@
   <button (click)="openDialog()" id="edit-btn" mat-raised-button class="btn btn-primary">Edit Bio</button>
 
   <ng-container *ngFor="let users of userList; let x = index">
-      <app-user-card [users]="users"></app-user-card>
-      </ng-container>
+    <app-user-card [users]="users"></app-user-card>
+  </ng-container>
 
   <ng-container *ngFor="let art of artList; let x = index">
     <app-feed-card-personal [art]="art"></app-feed-card-personal>
-    </ng-container>
+  </ng-container>
