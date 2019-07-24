@@ -1,10 +1,12 @@
+<link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+
 <div id=#wrapper>
  <ng-container *ngFor="let a of art; let x = index">
    <br />
    <br />
    <mat-card>
-     <h3>Title: {{a.title}}</h3>
-
+     <h3 id="title">{{a.title}}</h3>
+    
 
      <!-- <img src="https://i.pinimg.com/474x/a2/bc/9f/a2bc9f945bdbcbbec6648d14356974e4--fuse-bead-patterns-perler-patterns.jpg(34 kB)
 https://i.pinimg.com/474x/a2/bc/9f/a2bc9f945bdbcbbec6648d14356974e4--fuse-bead-patterns-perler-patterns.jpg
@@ -18,6 +20,7 @@ https://i.pinimg.com/474x/a2/bc/9f/a2bc9f945bdbcbbec6648d14356974e4--fuse-bead-p
            </tr>
          </ng-container>
        </table>
+       <h3 id="artist">Created by: {{a.username}}</h3>
      <!-- <app-comments></app-comments> -->
    </mat-card>
    <br />

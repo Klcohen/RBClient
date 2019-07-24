@@ -1,6 +1,6 @@
-import { Component, OnInit, Inject,  Input  } from '@angular/core';
-import { UserService} from '../users/user.service'
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { Component, OnInit, Inject, Input } from '@angular/core';
+import { UserService } from '../users/user.service'
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ArtServiceService } from '../art-service/art-service.service';
 
 
@@ -16,7 +16,7 @@ export class UserCardComponent implements OnInit {
 
   ngOnInit() {
 
-       console.log(this.users)
+    console.log(this.users)
 
   }
 
