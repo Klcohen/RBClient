@@ -1,23 +1,29 @@
 div {
-  background-color: #222222;
+  background-color: #444444;
   text-align: center;
   justify-content: center; 
-  display: flex-box;
+  display: flexbox;
   height: 100%;
   width: 100%;
 }
 
 mat-card {
   width: 70vh; 
-  margin-left: 50vh; 
-  margin-right: 50vh;
+  margin-left: auto; 
+  margin-right: auto;
   background-color: #eeeeee;
+}
+
+button{
+  background-color:	#df3d5e;
+  color: white;
+  margin: 10px;
 }
 
 table,
 tr,
 td {
-border: 1px solid black;
+border: 0px solid black;
 }
 table {
 border-collapse: collapse;
@@ -28,4 +34,8 @@ height: 20px;
 }
 td {
 width: 20px;
+}
+
+#pixel_canvas{
+  margin-bottom: 20px
 }
