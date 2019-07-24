@@ -1,3 +1,7 @@
+* {
+font-family: 'Press Start 2P', cursive;
+}
+
 div {
   background-color: #444444;
   text-align: center;
@@ -11,7 +15,9 @@ mat-card {
   width: 70vh; 
   margin-left: auto; 
   margin-right: auto;
-  background-color: #eeeeee;
+  background-color: 000000;
+  padding-bottom: 30px;
+  border-radius: .5em;
 }
 
 table,
@@ -22,10 +28,21 @@ border: 0px solid black;
 table {
 border-collapse: collapse;
 margin: 0 auto;
+margin-bottom: 40px;
+margin-top: 30px;
 }
 tr {
 height: 20px;
 }
 td {
 width: 20px;
+}
+
+#title {
+  font-size: 1.5em;
+  margin-top: 10px;
+}
+
+#artist{
+  font-size: .8em
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommentsComponent } from '../comments/comments.component';
 import { ArtServiceService } from '../art-service/art-service.service';
 import { CommentService } from '../services/comment.service'
+import { UserService } from '../users/user.service';
 // import { post } from 'selenium-webdriver/http';
 
 
@@ -14,16 +15,13 @@ import { CommentService } from '../services/comment.service'
 export class FeedComponent implements OnInit {
   artList=[];
  
-  constructor(private artService: ArtServiceService, private commentService: CommentService) { }
+  constructor(private artService: ArtServiceService, private commentService: CommentService, private userService: UserService) { }
   
   ngOnInit() {
     this.artService.getArt().subscribe(art =>{
 
       this.artList.push(art.reverse());
-  }
-    )
-    // let postId = 9
-    // this.commentService.getComment(postId).subscribe()
+  })
   }
 
 }

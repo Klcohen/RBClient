@@ -29,6 +29,7 @@ import { AuthGuardService } from './auth/auth-guard.service';
 import { AuthService } from './auth/auth.service';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { MatDialogModule } from '@angular/material';
+import { UserCardComponent } from './user-card/user-card.component';
 
 
 
@@ -50,7 +51,8 @@ import { MatDialogModule } from '@angular/material';
     SignInComponent,
     SignUpComponent,
     EditBioBox,
-    EditTitleBox
+    EditTitleBox,
+    UserCardComponent
   ],
   imports: [
     BrowserModule,
