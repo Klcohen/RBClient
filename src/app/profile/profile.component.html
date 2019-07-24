@@ -1,9 +1,9 @@
 <div id="wrapper">
   <button (click)="deleteUser()" class="btn" mat-raised-button>Delete User</button>
-  <button (click)="logout()" class="btn" mat-raised-button>Logout</button>
+  <button (click)="logout()" class="btn" mat-raised-button>Logout</button><br /> <br />
   <h1>{{username}}'s Profile</h1>
   <h4>{{bio}}</h4>
-  <button (click)="openDialog()" id="edit-btn" mat-raised-button class="btn btn-primary">Edit Bio</button>
+  <button (click)="openDialog()" id="edit-btn" mat-raised-button class="btn-primary">Edit Bio</button>
 
   <ng-container *ngFor="let users of userList; let x = index">
     <app-user-card [users]="users"></app-user-card>

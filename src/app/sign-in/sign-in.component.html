@@ -1,17 +1,16 @@
+<div id="wrapper">
+  <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+    <h1>Login</h1>
+    <label>
+      <input formControlName="email" matInput placeholder="Email" type="email"><br />
+    </label>
 
-<mat-card>
-
-    <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
-        <mat-card-title>login</mat-card-title>
-        <label>
-            <input formControlName="email" matInput placeholder="Email" type="email">
-        </label>
-
-        <label>
-            <input formControlName="password" matInput placeholder="Password" type="password">
-        </label>
-        <a style="padding:1em" routerLink="/Sign Up">New User?</a>
-        <button mat-fab type="submit"routerLink= "/profile">Submit</button>
-        <!-- <a style="padding:1em" (click)="onSubmit()" routerLink="/profile">Log in</a> -->
-    </form>
-</mat-card>
+    <label>
+      <input formControlName="password" matInput placeholder="Password" type="password"><br />
+    </label>
+    <button mat-raised-button type="submit" routerLink="/profile">Login</button><br />
+    <p>New user?</p>
+    <a style="padding:1em" routerLink="/Sign Up">Create an Account!</a>
+    <!-- <a style="padding:1em" (click)="onSubmit()" routerLink="/profile">Log in</a> -->
+  </form>
+</div>

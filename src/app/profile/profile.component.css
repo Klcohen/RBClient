@@ -9,15 +9,25 @@
   text-align: center;
   justify-content: center; 
   display: flex-box;
+  color: white;
+  margin: 0 auto;
 }
 
 button { 
   background-color:	#df3d5e	;
   border-radius: 2px;
+  color: white;
 }
 
 .btn {
   float: right;
+  margin: 10px;
+}
+
+#edit-btn{
+  display: flexbox;
+  text-align: center;
+  margin: 0 auto;
 }
 
 mat-card {
